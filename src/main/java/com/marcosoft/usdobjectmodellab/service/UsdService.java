@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Optional;
-import java.util.OptionalInt;
 
 @Service
 @Slf4j
