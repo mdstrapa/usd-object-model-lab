@@ -13,8 +13,6 @@ import lombok.NoArgsConstructor;
 public class UsdPcat {
     @JsonProperty("@id")
     private Integer id;
-    @JsonProperty("@REL_ATTR")
-    private String relAttr;
     @JsonProperty("@COMMON_NAME")
     private String commonName;
 }

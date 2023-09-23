@@ -1,7 +1,6 @@
 package com.marcosoft.usdobjectmodellab.controller;
 
-import com.marcosoft.usdobjectmodellab.exception.UsdCrNotFoundException;
-import com.marcosoft.usdobjectmodellab.exception.UsdRestException;
+import com.marcosoft.usdobjectmodellab.model.UsdCnt;
 import com.marcosoft.usdobjectmodellab.model.UsdCr;
 import com.marcosoft.usdobjectmodellab.service.UsdService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +21,14 @@ public class MainController {
     @GetMapping("/cr/{id}")
     public ResponseEntity<UsdCr> findCrById(@PathVariable int id){
         return usdService.findCrById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+
+    }
+
+    @GetMapping("/cnt/{id}")
+    public ResponseEntity<UsdCnt> findCntById(@PathVariable String id){
+        return usdService.findCntById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 

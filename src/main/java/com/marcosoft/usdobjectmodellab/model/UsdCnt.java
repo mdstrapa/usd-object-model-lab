@@ -10,14 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
-public class UsdCr {
+public class UsdCnt {
     @JsonProperty("@id")
-    private Integer id;
+    private String id;
     @JsonProperty("@COMMON_NAME")
     private String commonName;
-    private String description;
-    private String summary;
-    private UsdPcat category;
-    private UsdCnt customer;
+    @JsonProperty("userid")
+    private String userId;
 }
